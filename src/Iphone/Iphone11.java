@@ -5,12 +5,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 
-// Using template pattern
+/**
+ * Iphone11 is a version of an Iphone
+ * Abstract class will contain a template method
+ * and abstract method(s) that child classes will define.
+ */
 public abstract class Iphone11 implements Iphone {
+    /**
+     * Gets the price of Iphone model
+     * @return
+     */
     public abstract double cost();
+
+    /**
+     * Gets description of Iphone model.
+     * @return
+     */
     public abstract String getDescription();
 
-    // TEMPLATE METHOD
+    /**
+     * Template method used.
+     * Several methods used to construct Iphone11
+     * getHardware() is hook that makes this a Template Pattern.
+     */
     @Override
     public void implementIphone(){
         designIphone();
@@ -22,22 +39,38 @@ public abstract class Iphone11 implements Iphone {
         }
     }
 
+    /**
+     * Prints out confirmation for customer that Iphone11 is being designed.
+     */
     public void designIphone(){
         System.out.println("Designing new iPhone..." );
     }
 
+    /**
+     * Prints out software being implemented into Iphone11
+     */
     public void prepareIOSsoftware(){
         System.out.println("Adding new IOS into iPhone..." );
     }
 
+    /**
+     * Hook method.  Child classes must define hardware features that construct model type.
+     */
     public abstract void getHardware();
 
+    /**
+     * Prints out confirmation that engraving request is going through.
+     */
     public void addEngraving(){
         System.out.println("Adding customized engraving to device..." );
     }
 
 
-    // Hook method for iPhone
+    /**
+     * Returns true if engraving feature is used.
+     * This is another possible hook method.
+     * @return
+     */
     public boolean customerWantsEngraving(){
         String engravingName = getEngravingName();
 
@@ -48,6 +81,10 @@ public abstract class Iphone11 implements Iphone {
         }
     }
 
+    /**
+     * Asks customer if they would like to add an engraving.
+     * @return
+     */
     private String getEngravingName(){
         String customerResponse = null;
         System.out.println("Would you like to add an engraving name to your Apple device? y/n");

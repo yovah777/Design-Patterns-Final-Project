@@ -1,9 +1,15 @@
 import Mac.*;
 
-
+/**
+ * Represents the factory that makes the MacBookPros.
+ */
 public class MacFactory {
 
-
+    /**
+     *  Creates a new MacBookPro with a specific size.
+     * @param macBookProSize    Either 13 or 15.
+     * @return
+     */
     public Mac createMac(String macBookProSize)
     {
         if (macBookProSize.equals(null)){

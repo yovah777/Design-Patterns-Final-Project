@@ -2,8 +2,10 @@ import Iphone.Iphone;
 import Mac.Mac;
 import Mac.MacDecorator.*;
 
-
-// Receiver
+/**
+ * Represents an Assembeler that receives an order and has the fine details
+ * of the products on the order.
+ */
 public class Assembler {
     public static String macBookProSize = "";
     public static String iPhoneModel = "";
@@ -16,9 +18,10 @@ public class Assembler {
     Mac mac;
     Iphone iphone;
 
-    //    public static String[] colorList = null;
-    //    public static String[] appleCareList = null;
-
+    /**
+     * Order is managed and products are assembled.
+     * @param factoryType   Factory associated to type of product.
+     */
     public void sendOrder(String factoryType){
         if(factoryType.equalsIgnoreCase("Mac")){
             System.out.println((macBookProSize + " order received."));
