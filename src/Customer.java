@@ -2,8 +2,8 @@ import Order.Assembler;
 import Order.Cart;
 import Order.IphoneOrder;
 import Order.MacOrderCommand;
-import Payment.BankAccount;
-import Payment.BankAccountHolder;
+import Payment.Bank_Account.BankAccount;
+import Payment.Bank_Account.BankAccountHolder;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,4 @@
-package Payment;
-
-import Payment.Error.InsufficientFundsException;
+package Payment.Bank_Account;
 
 /**
 * Creates the account abstract class. 

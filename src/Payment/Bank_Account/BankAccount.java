@@ -1,6 +1,5 @@
-package Payment;
+package Payment.Bank_Account;
 
-import Payment.Error.InsufficientFundsException;
 /**
  * Bank account class that extends the Account class.
  * @author Nexlore
