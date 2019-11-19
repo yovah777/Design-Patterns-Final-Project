@@ -1,0 +1,2 @@
+# preserve line endings for windwos files
+*.bat text eol=crlf
