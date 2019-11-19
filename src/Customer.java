@@ -1,3 +1,10 @@
+import Order.Assembler;
+import Order.Cart;
+import Order.IphoneOrder;
+import Order.MacOrderCommand;
+import Payment.BankAccount;
+import Payment.BankAccountHolder;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +18,16 @@ public class Customer {
 
         Cart cart = new Cart();
         Assembler assembler = new Assembler();
+        BankAccount ac1 = new BankAccount(500);
+        BankAccount ac2 = new BankAccount(600);
 
+        BankAccountHolder holder = new BankAccountHolder(400);
+
+        holder.addAccount(ac1);
+        holder.addAccount(ac2);
+
+        holder.printAllBalanceInBankingAccount();
+        System.out.println("Total money : " + holder.totalMoney());
         // Declare Scanner tool
         Scanner scanner = new Scanner(System.in);
 
