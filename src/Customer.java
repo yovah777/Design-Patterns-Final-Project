@@ -165,7 +165,6 @@ public class Customer {
                 System.out.println("Memory selection completed");
                 System.out.println("");
 
-
                 // 3 -- STORAGE SELECTION
                 System.out.println("************** STORAGE CUSTOMIZATION **************");
                 Scanner scan3 = new Scanner(System.in);
@@ -245,11 +244,11 @@ public class Customer {
                     System.out.println("[1] AmericanExpress");
                     System.out.println("[2] AppleCard");
                     System.out.println("[3] Visa");
+
                     Scanner scanPaymentCredit = new Scanner(System.in);
                     int value1 = scanPaymentCredit.nextInt();
 
                     if (value1 == 1) {
-
                         context = new PaymentContext(new AmericanExpressStrategy());
                     } else if (value1 == 2) {
                         context = new PaymentContext(new AppleStrategy());
@@ -258,6 +257,7 @@ public class Customer {
                     }
                     double totalDiscount = context.executeStrategy(money);
                     money -= totalDiscount;
+
                     System.out.println("After cash back : " + money);
                     System.out.println("Cash Back save : " + totalDiscount);
 
@@ -266,7 +266,6 @@ public class Customer {
                 } else {
                     break;
                 }
-//                }
                 System.out.println("----------------");
                 System.out.println("Thank you for shopping at the Apple Store!");
                 break;

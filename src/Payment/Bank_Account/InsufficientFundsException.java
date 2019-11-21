@@ -2,7 +2,6 @@ package Payment.Bank_Account;// Customize Exception returns ISF messsage to cust
 
 /**
  * Sets up the Insufficient Funds Exception
- * 
  */
 public class InsufficientFundsException extends Exception {
     public InsufficientFundsException() {
