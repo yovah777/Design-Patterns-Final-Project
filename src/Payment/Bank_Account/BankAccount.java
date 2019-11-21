@@ -40,8 +40,8 @@ public class BankAccount extends Account {
             this.setBalance(remain);
             System.out.println("You have sufficient funds in your accounts Balance: " + this.getBalance());
         } else {
-
             double remainder = amount - balance;
+
             if (getNextAccount() != null) {
                 getNextAccount().deduct(remainder);
                 this.setBalance(0.0);
