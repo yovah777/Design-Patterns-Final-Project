@@ -2,12 +2,13 @@ import Order.Assembler;
 import Order.Cart;
 import Order.IphoneOrder;
 import Order.MacOrderCommand;
+
+import OrderState.*;
 import Payment.*;
 import Payment.Bank_Account.BankAccount;
 import Payment.Bank_Account.BankAccountHolder;
 import Payment.Bank_Account.CreditAccount;
 
-import javax.naming.Context;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,12 +22,16 @@ public class Customer {
     public static void main(String[] args) {
         PaymentContext context = null;
 
+        OrderContext stateContext = new OrderContext();
+
         ArrayList<String> processorList = new ArrayList<>();
         ArrayList<String> memoryList = new ArrayList<>();
         ArrayList<String> storageList = new ArrayList<>();
         ArrayList<String> caseList = new ArrayList<>();
-        double totalCost = 0.0;
+
         Cart cart = new Cart();
+
+        boolean firstOrder = true;
         Assembler assembler = new Assembler();
         BankAccount ac1 = new BankAccount(500);
         BankAccount ac2 = new BankAccount(600);
@@ -43,11 +48,17 @@ public class Customer {
 
         holder.printAllBalanceInBankingAccount();
         System.out.println("Total money : " + holder.totalMoney());
+
         // Declare Scanner tool
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println();
+            if (firstOrder) {
+                stateContext.setState(new StartState());
+                stateContext.printState();
+            }
+
             System.out.println("Welcome to the Apple Store would you like to order?");
             System.out.println("[1] Iphone");
             System.out.println("[2] Macbook");
@@ -55,7 +66,13 @@ public class Customer {
 
             int answer = scanner.nextInt();
 
+            if (firstOrder && answer != 1 && answer != 2) {
+                System.out.println("----------------");
+                System.out.println("Thank you for shopping at the Apple Store!");
+                break;
+            }
             // ANSWER 1 - User wants iPhone - Template pattern
+            firstOrder = false;
 
             // iphone uses template pattern
             if (answer == 1) {
@@ -65,7 +82,6 @@ public class Customer {
                 for (int i = 0; i < 1; i++) {
                     System.out.println("[1] Iphone 11 Pro  --- $999.00");
                     System.out.println("[2] Iphone 11 Standard  --- $699.00");
-
 
                     int iPhoneSelection = scanIphone.nextInt();
 
@@ -79,11 +95,15 @@ public class Customer {
                         break;
                     }
                 }
+
                 System.out.println("You have finished selecting an iPhone");
                 System.out.println("");
 
                 IphoneOrder iphoneOrder = new IphoneOrder(assembler, iphoneModel);
                 cart.addToCart(iphoneOrder);
+                stateContext.setState(new BuildState());
+                stateContext.printState();
+
             }
 
             // ANSWER 2 - User wants Macbook - Decorator pattern
@@ -226,7 +246,8 @@ public class Customer {
                 MacOrderCommand macOrderCommand = new MacOrderCommand(assembler, macbookProSize, processorArr, memoryArr, storageArr, caseArr);
 
                 cart.addToCart(macOrderCommand);
-
+                stateContext.setState(new BuildState());
+                stateContext.printState();
             } else {
                 double money = assembler.totalCost;
 
@@ -237,7 +258,13 @@ public class Customer {
                 int value = scanPayment.nextInt();
 
                 if (value == 1) {
-                    holder.payWithBankAccount(money);
+                    if (holder.payWithBankAccount(money) == false) {
+                        stateContext.setState(new CancelState());
+                        stateContext.printState();
+                    } else {
+                        stateContext.setState(new DeliveryState());
+                        stateContext.printState();
+                    }
                     holder.printAllBalanceInBankingAccount();
                 } else if (value == 2) {
 
@@ -261,11 +288,19 @@ public class Customer {
                     System.out.println("After cash back : " + money);
                     System.out.println("Cash Back save : " + totalDiscount);
 
-                    holder.payWithCreditAccount(money);
+                    if (holder.payWithCreditAccount(money) == false) {
+                        stateContext.setState(new CancelState());
+                        stateContext.printState();
+                    } else {
+                        stateContext.setState(new DeliveryState());
+                        stateContext.printState();
+                    }
                     holder.printAllBalanceInCreditAccount();
+
                 } else {
                     break;
                 }
+
                 System.out.println("----------------");
                 System.out.println("Thank you for shopping at the Apple Store!");
                 break;

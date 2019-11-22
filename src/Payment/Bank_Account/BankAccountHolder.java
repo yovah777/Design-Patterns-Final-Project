@@ -12,7 +12,9 @@ public class BankAccountHolder {
 
     /***
      * Constructor for BankAccountHolder
-     * @param initialMoney - Set amount for initial checking account that is created when customer initialized
+     * 
+     * @param initialMoney - Set amount for initial checking account that is created
+     *                     when customer initialized
      */
 
     public BankAccountHolder(double initialMoney) {
@@ -22,13 +24,14 @@ public class BankAccountHolder {
 
     /***
      * Add account to the the BankAccountHolder
+     * 
      * @param account - the passed account
      */
     public void addAccount(Account account) {
         if (account instanceof CreditAccount) {
             if (currentCredit == null) {
                 System.out.println("Inside");
-                credit = (CreditAccount)account;
+                credit = (CreditAccount) account;
                 currentCredit = credit;
             } else {
                 currentCredit.setNextAccount(account);
@@ -42,37 +45,39 @@ public class BankAccountHolder {
 
     }
 
-
     /***
-     * Implementation from PayingParty, calls checkProcessor to verify if customer accounts
-     * is sufficient to amount due
+     * Implementation from PayingParty, calls checkProcessor to verify if customer
+     * accounts is sufficient to amount due
+     * 
      * @param amount - Amount due to the customer
      */
-    public void payWithBankAccount(double amount) {
+    public boolean payWithBankAccount(double amount) {
         CheckProcessor checkingProcessor = new CheckProcessor();
         boolean sufficient = checkingProcessor.processCheck(checking, amount);
+        return sufficient;
     }
 
     /***
-     * Implementation from PayingParty, calls checkProcessor to verify if customer accounts
-     * is sufficient to amount due
+     * Implementation from PayingParty, calls checkProcessor to verify if customer
+     * accounts is sufficient to amount due
+     * 
      * @param amount - Amount due to the customer
      */
-    public void payWithCreditAccount(double amount) {
+    public boolean payWithCreditAccount(double amount) {
+        boolean sufficient = false;
         if (credit == null) {
             System.out.println("Dont have credit account !!");
         } else {
             System.out.println("Testing credit !!");
             CheckProcessor checkingProcessor = new CheckProcessor();
-            boolean sufficient = checkingProcessor.processCheck(credit, amount);
+            sufficient = checkingProcessor.processCheck(credit, amount);
         }
-
+        return sufficient;
     }
 
     /***
      * Print all the balance in banking account
      */
-
 
     public void printAllBalanceInBankingAccount() {
         current = checking;
@@ -87,6 +92,7 @@ public class BankAccountHolder {
             }
         }
     }
+
     public void printAllBalanceInCreditAccount() {
         currentCredit = credit;
         while (currentCredit != null) {
