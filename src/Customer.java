@@ -8,6 +8,9 @@ import Payment.*;
 import Payment.Bank_Account.BankAccount;
 import Payment.Bank_Account.BankAccountHolder;
 import Payment.Bank_Account.CreditAccount;
+import ProductNotification.EmailObserver;
+import ProductNotification.Subject;
+import ProductNotification.TextObserver;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,6 +55,16 @@ public class Customer {
         // Declare Scanner tool
         Scanner scanner = new Scanner(System.in);
 
+        Subject subject = new Subject();
+
+        new EmailObserver(subject);
+        new TextObserver(subject);
+
+
+        System.out.println("First state change: IPHONE XX Released");
+        subject.setState("Iphone XX");
+        System.out.println("MACBOOK : 20 INCH Released");
+        subject.setState("Macbook Pro 20 Released"); // set states hits the notify()
         while (true) {
             System.out.println();
             if (firstOrder) {
