@@ -38,10 +38,11 @@ public class Customer {
         Assembler assembler = new Assembler();
         BankAccount ac1 = new BankAccount(500);
         BankAccount ac2 = new BankAccount(600);
-
-        CreditAccount cr1 = new CreditAccount(400);
-        CreditAccount cr2 = new CreditAccount(100);
         BankAccountHolder holder = new BankAccountHolder(400);
+
+        CreditAccount cr1 = new CreditAccount(500);
+        CreditAccount cr2 = new CreditAccount(500);
+
 
         holder.addAccount(ac1);
         holder.addAccount(ac2);
@@ -50,7 +51,10 @@ public class Customer {
         holder.addAccount(cr2);
 
         holder.printAllBalanceInBankingAccount();
-        System.out.println("Total money : " + holder.totalMoney());
+        System.out.println("Total money Bank Account : " + holder.totalMoney());
+        System.out.println("Credit Card account balances below: " + holder.totalMoney());
+        holder.printAllBalanceInCreditAccount();
+
 
         // Declare Scanner tool
         Scanner scanner = new Scanner(System.in);
