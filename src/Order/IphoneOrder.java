@@ -1,6 +1,9 @@
+package Order;
+
+
 /**
  * Represents an Iphone order that holds the details of
- * what type of Iphone is ordered and sends it to the Assembler.
+ * what type of Iphone is ordered and sends it to the Order.Assembler.
  */
 public class IphoneOrder implements OrderCommand {
     Assembler assembler;
