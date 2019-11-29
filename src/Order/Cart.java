@@ -4,13 +4,13 @@ import Order.OrderCommand;
 
 /**
  * This is our 'invoker' (command patten).
- * The cart will hold products added to itself.
+ * The cart will hold product orders added to itself.
  */
 public class Cart {
     OrderCommand appleCommand;
 
     /**
-     *  Order sent
+     *  Order added to cart
      * @param a
      */
     public void addToCart(OrderCommand a){

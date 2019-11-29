@@ -3,9 +3,9 @@ import Mac.Mac;
 
 /**
  * Specialization of Mac
- * It will help represent the decorator pattern being used.
- * It will display a message to the user that a customized
- * feature is being assembled for them.
+ * It will represent the decorator pattern being used.
+ * It will also display a message to the user that a custom case
+ * feature has been assembled for them.
  */
 public abstract class CaseDecorator extends Mac {
     /**

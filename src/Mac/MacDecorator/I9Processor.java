@@ -10,7 +10,7 @@ public class I9Processor extends ProcessorDecorator{
     /**
      * Every processor object is associated with a MacBookPro.
      * @param mac This is a MacBook
-     *            it is associated to.
+     *            it will be associated to.
      */
     public I9Processor(Mac mac) {
         this.mac = mac;

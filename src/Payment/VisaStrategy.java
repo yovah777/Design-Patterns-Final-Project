@@ -1,5 +1,8 @@
 package Payment;
 
+/**
+ * Visa cash back bonus strategy.
+ */
 public class VisaStrategy implements Strategy {
     private final double percentage = 0.040;
     @Override

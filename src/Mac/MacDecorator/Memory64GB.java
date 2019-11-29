@@ -1,14 +1,15 @@
 package Mac.MacDecorator;
 import Mac.Mac;
 /**
- * Represents 64GB of Memory object that can be added to
+ * Represents 64GB of Memory (feature) that can be added to
  * a MacBookPro.
+ * Price will be added to the total.
  */
 public class Memory64GB extends MemoryDecorator{
 
     Mac mac;
     /**
-     * Every memory object is associated with a MacBookPro.
+     * Memory feature associated with a MacBookPro.
      * @param mac This is a MacBook
      *            it is associated to.
      */

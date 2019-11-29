@@ -6,6 +6,9 @@ package Mac;
  * description, packaging, and shipping.
  */
 public abstract class Mac {
+    /**
+     * Identifies the MacBook Pro model
+     */
     String description = "";
 
     /**

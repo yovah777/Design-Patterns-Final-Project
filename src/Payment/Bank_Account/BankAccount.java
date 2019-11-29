@@ -32,7 +32,6 @@ public class BankAccount extends Account {
      * @return
      * @throws InsufficientFundsException - Exception thrown when Accounts balance is insufficient
      */
-
     public void deduct(double amount) throws InsufficientFundsException {
         Double balance = this.getBalance();
         if (amount <= balance) {

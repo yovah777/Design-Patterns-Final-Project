@@ -1,5 +1,8 @@
 package Payment;
 
+/**
+ * American Express cash back bounus strategy
+ */
 public class AmericanExpressStrategy implements Strategy {
     private final double percentage = 0.025;
 

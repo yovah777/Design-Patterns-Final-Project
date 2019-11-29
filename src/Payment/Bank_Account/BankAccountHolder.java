@@ -2,6 +2,9 @@ package Payment.Bank_Account;
 
 import java.util.ArrayList;
 
+/**
+ * Represents the owner of the Bank account
+ */
 public class BankAccountHolder {
     // Intialize variables
     private BankAccount checking;
@@ -16,7 +19,6 @@ public class BankAccountHolder {
      * @param initialMoney - Set amount for initial checking account that is created
      *                     when customer initialized
      */
-
     public BankAccountHolder(double initialMoney) {
         checking = new BankAccount(initialMoney);
         current = checking;
@@ -93,6 +95,9 @@ public class BankAccountHolder {
         }
     }
 
+    /**
+     * Prints available balance in credit accounts
+     */
     public void printAllBalanceInCreditAccount() {
         currentCredit = credit;
         while (currentCredit != null) {
@@ -107,6 +112,10 @@ public class BankAccountHolder {
         }
     }
 
+    /**
+     *  Represents the total amount of available funds in all accounts.
+     * @return total amount available
+     */
     public double totalMoney() {
         current = checking;
         double total = 0.0;

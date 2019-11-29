@@ -1,5 +1,8 @@
 package Payment.Bank_Account;
 
+/**
+ * Represents the CreditAccount(credit cards)
+ */
 public class CreditAccount extends Account {
 
     // Initialize of variables

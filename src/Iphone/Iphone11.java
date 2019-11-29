@@ -25,7 +25,7 @@ public abstract class Iphone11 implements Iphone {
 
     /**
      * Template method used.
-     * Several methods used to construct Iphone11
+     * Several methods are used here to construct Iphone11
      * getHardware() is hook that makes this a Template Pattern.
      */
     @Override
@@ -83,7 +83,7 @@ public abstract class Iphone11 implements Iphone {
 
     /**
      * Asks customer if they would like to add an engraving.
-     * @return
+     * @return  Customer's answer (yes or no)
      */
     private String getEngravingName(){
         String customerResponse = null;

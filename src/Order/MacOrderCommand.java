@@ -1,7 +1,7 @@
 package Order;
 
 /**
- * Represents a MacBookPro order that will be sent to Order.Assembler.
+ * Represents a MacBookPro order, holds details that will be sent to assembler.
  * Order includes features that will be added to specific type of MacBookPro.
  */
 public class MacOrderCommand implements OrderCommand{

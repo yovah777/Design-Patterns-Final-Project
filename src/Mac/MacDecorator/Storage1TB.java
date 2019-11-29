@@ -8,7 +8,7 @@ public class Storage1TB extends StorageDecorator{
 
     Mac mac;
     /**
-     * Every storage object is associated with a MacBookPro.
+     * Storage feature is added to a MacBookPro.
      * @param mac This is a MacBook
      *            it is associated to.
      */

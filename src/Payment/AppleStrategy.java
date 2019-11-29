@@ -1,5 +1,8 @@
 package Payment;
 
+/**
+ * Apple casch back bonus strategy.
+ */
 public class AppleStrategy implements Strategy {
     private final double percentage = 0.03;
     @Override

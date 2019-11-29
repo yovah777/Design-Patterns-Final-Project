@@ -7,8 +7,8 @@ import Mac.Mac;
 import Mac.MacDecorator.*;
 
 /**
- * Represents an Assembeler that receives an order and has the fine details
- * of the products on the order.
+ * Represents an Assembeler that receives (Receiver) an order of different products.
+ *
  */
 public class Assembler {
     public static double totalCost = 0.0;
@@ -24,9 +24,9 @@ public class Assembler {
     Iphone iphone;
 
     /**
-     * Order is managed and products are assembled.
+     * Order is managed and sent to facorties for product retrieval/configuration.
      *
-     * @param factoryType Factory associated to type of product.
+     * @param factoryType Factory associated to the type of product.
      */
     public void sendOrder(String factoryType) {
         if (factoryType.equalsIgnoreCase("Mac")) {
@@ -56,7 +56,14 @@ public class Assembler {
         System.out.println("");
     }
 
-    // Mac Decorator method
+    /**
+     * MacBook Pro gets specific features added to it based on the order
+     * @param processorList specific processor
+     * @param memoryList    specific amount of memory
+     * @param storageList   specific amount of storage
+     * @param caseList      specific case
+     * @return
+     */
     public Mac decorate(String[] processorList, String[] memoryList, String[] storageList, String[] caseList) {
 
         // Iterate over processer decorator list

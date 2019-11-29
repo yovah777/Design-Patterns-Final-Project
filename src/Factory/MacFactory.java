@@ -9,8 +9,8 @@ public class MacFactory {
 
     /**
      *  Creates a new MacBookPro with a specific size.
-     * @param macBookProSize    Either 13 or 15.
-     * @return
+     * @param macBookProSize    Size is either 13 or 15.
+     * @return  An object representing either one of these models.
      */
     public Mac createMac(String macBookProSize)
     {
