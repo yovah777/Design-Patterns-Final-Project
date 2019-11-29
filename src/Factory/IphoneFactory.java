@@ -1,7 +1,17 @@
+package Factory;
+
 import Iphone.*;
 
-
+/**
+ * Represents a factory that will build Iphone models.
+ * Iphone11Standard and Iphone11Pro are created here.
+ */
 public class IphoneFactory {
+    /**
+     * Creates a specific model of Iphone.
+     * @param iphoneModel   Specific type.
+     * @return
+     */
     public Iphone makePhone(String iphoneModel) {
         if (iphoneModel.equals(null)){
             return null;

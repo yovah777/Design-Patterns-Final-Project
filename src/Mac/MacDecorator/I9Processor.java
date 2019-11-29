@@ -1,10 +1,17 @@
 package Mac.MacDecorator;
 import Mac.Mac;
-
+/**
+ * Represents a I9 processor that will be added to a MacBookPro if chosen
+ * by the customer.
+ */
 public class I9Processor extends ProcessorDecorator{
 
     Mac mac;
-
+    /**
+     * Every processor object is associated with a MacBookPro.
+     * @param mac This is a MacBook
+     *            it is associated to.
+     */
     public I9Processor(Mac mac) {
         this.mac = mac;
     }
