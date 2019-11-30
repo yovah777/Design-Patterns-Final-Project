@@ -1,28 +1,28 @@
 package Mac.MacDecorator;
-import Mac.Mac;
+import Mac.Computer;
 /**
  * Represents 512GB of storage feature that can be added to
  * a MacBookPro.
  */
 public class Storage512GB extends StorageDecorator{
 
-    Mac mac;
+    private Computer computer;
     /**
      * Storage feaure is associated with a MacBookPro.
-     * @param mac This is a MacBook
+     * @param computer This is a MacBook
      *            it is associated to.
      */
-    public Storage512GB(Mac mac){
-        this.mac = mac;
+    public Storage512GB(Computer computer){
+        this.computer = computer;
     }
 
     @Override
-    public double cost(){
-        return 400.00 + mac.cost();
+    public double getCost(){
+        return 400.00 + computer.getCost();
     }
 
     @Override
-    public String getDescription(){
-        return mac.getDescription() + ", 512GB of Storage";
+    public String getDescription() {
+        return computer.getDescription() + ", 512GB of Storage";
     }
 }

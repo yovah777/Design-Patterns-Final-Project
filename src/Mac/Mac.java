@@ -5,7 +5,7 @@ package Mac;
  * Generalizes the messages that will print out for price,
  * description, packaging, and shipping.
  */
-public abstract class Mac {
+public abstract class Mac extends Computer {
     /**
      * Identifies the MacBook Pro model
      */
@@ -15,7 +15,7 @@ public abstract class Mac {
      * Returns price of MacBookPro.
      * @return
      */
-    public abstract double cost();
+    public abstract double getCost();
 
     /**
      * Returns description of specific model of MacBookPro.

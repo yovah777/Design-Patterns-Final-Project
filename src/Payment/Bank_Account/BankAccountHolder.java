@@ -1,5 +1,7 @@
 package Payment.Bank_Account;
 
+import Payment.PaymentContext;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,8 @@ public class BankAccountHolder {
     private CreditAccount credit;
     private Account current;
     private Account currentCredit;
+    private PaymentContext context = null;
+
     ArrayList<Account> accounts = new ArrayList<>();
 
     /***
@@ -32,7 +36,6 @@ public class BankAccountHolder {
     public void addAccount(Account account) {
         if (account instanceof CreditAccount) {
             if (currentCredit == null) {
-                System.out.println("Inside");
                 credit = (CreditAccount) account;
                 currentCredit = credit;
             } else {
