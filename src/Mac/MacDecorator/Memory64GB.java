@@ -3,7 +3,7 @@ import Mac.Computer;
 /**
  * Represents 64GB of Memory (feature) that can be added to
  * a MacBookPro.
- * Price will be added to the total.
+ * Price of specialized feature will be added to the total.
  */
 public class Memory64GB extends MemoryDecorator{
 

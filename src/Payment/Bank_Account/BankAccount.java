@@ -1,5 +1,4 @@
 package Payment.Bank_Account;
-
 /**
  * Bank account class that extends the Account class.
  * @author Nexlore
@@ -18,7 +17,7 @@ public class BankAccount extends Account {
     }
 
     /***
-     * Customer can increase balance
+     * Increases balance
      * @param moneyToAdd - the amount to increase the balance by
      */
     public void makeDeposit(double moneyToAdd) {

@@ -1,11 +1,8 @@
 package Iphone;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
-
-
 /**
  * Iphone11 is a version of an Iphone
  * Abstract class will contain a template method
@@ -15,21 +12,19 @@ public abstract class Iphone11 implements Iphone {
     /**
      * Gets the price of Iphone model
      *
-     * @return
+     * @return  price
      */
     public abstract double cost();
-
     /**
      * Gets description of Iphone model.
      *
-     * @return
+     * @return  description
      */
     public abstract String getDescription();
-
     /**
      * Template method used.
      * Several methods are used here to construct Iphone11
-     * getHardware() is hook that makes this a Template Pattern.
+     * getHardware() is a hook that makes this a Template Pattern.
      */
     @Override
     public void implementIphone() {
@@ -41,7 +36,6 @@ public abstract class Iphone11 implements Iphone {
             addEngraving();
         }
     }
-
     /**
      * Prints out confirmation for customer that Iphone11 is being designed.
      */
@@ -62,7 +56,7 @@ public abstract class Iphone11 implements Iphone {
     public abstract void getHardware();
 
     /**
-     * Prints out confirmation that engraving request is going through.
+     * Asks user what they would like to specifically engrave into their Iphone, if 'yes', engraving added.
      */
     public void addEngraving() {
         Scanner scanner = new Scanner(System.in);
@@ -70,8 +64,6 @@ public abstract class Iphone11 implements Iphone {
         String value = scanner.nextLine();
         System.out.println("Adding " + value + " customized engraving to device...");
     }
-
-
     /**
      * Returns true if engraving feature is used.
      * This is another possible hook method.
@@ -87,7 +79,6 @@ public abstract class Iphone11 implements Iphone {
             return false;
         }
     }
-
     /**
      * Asks customer if they would like to add an engraving.
      *

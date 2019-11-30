@@ -1,7 +1,7 @@
 package OrderState;
 
 /**
- * State-specific methods will be called by each child class.
+ * State-specific method will be called by each child class.
  * Identifying the specific state the order is in.
  */
 public interface OrderState {

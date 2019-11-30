@@ -20,6 +20,9 @@ abstract public class Account {
      */
     public abstract void deduct(double amount) throws InsufficientFundsException;
 
+    /**
+     * print out statement for funds verification
+     */
     public abstract void print();
 
     public Account() {}

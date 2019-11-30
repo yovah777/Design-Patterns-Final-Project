@@ -7,8 +7,7 @@ import Mac.Mac;
 public abstract class ProcessorDecorator extends ComputerDecorator {
     /**
      * Returns description of what type of processor is added.
-     * @return
+     * @return  feature description
      */
-
     public abstract String getDescription();
 }

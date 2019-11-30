@@ -8,7 +8,11 @@ import ProductNotification.TextObserver;
 
 public class Customer {
 
-
+    /**
+     * Driver application
+     * Objects are instantiated, notifications released, and print out of available funds in accounts.
+     * @param args
+     */
     public static void main(String[] args) {
 
         BankAccount ac1 = new BankAccount(500);

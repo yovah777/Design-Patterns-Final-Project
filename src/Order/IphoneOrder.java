@@ -1,9 +1,8 @@
 package Order;
 
-
 /**
  * Represents an Iphone order that holds the details of
- * what type of Iphone is ordered and sends it to the Order.Assembler.
+ * what type of Iphone is ordered and sends it to the Assembler.
  */
 public class IphoneOrder implements OrderCommand {
     Assembler assembler;
@@ -25,6 +24,10 @@ public class IphoneOrder implements OrderCommand {
         assembler.sendOrder("Iphone", order);
     }
 
+    /**
+     * Retrieves the cost of an Iphone
+     * @return  Price of the Iphone product
+     */
     public double getIphoneCost() {
         return assembler.getIphoneCost();
     }

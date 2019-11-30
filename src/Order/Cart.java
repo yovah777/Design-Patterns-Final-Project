@@ -7,6 +7,9 @@ import Order.OrderCommand;
  * The cart will hold product orders added to itself.
  */
 public class Cart {
+    /**
+     * Order
+     */
     OrderCommand appleCommand;
 
     /**

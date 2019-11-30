@@ -1,5 +1,4 @@
 package Order;
-
 import Factory.MacFactory;
 import Mac.Computer;
 import Mac.MacBookPro13;
@@ -17,6 +16,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/**
+ * Represents input taken from User.
+ * User makes selections of Apple products they would like to purchase.
+ */
 public class InputFromUser {
     private PaymentContext context = null;
     private double totalCost = 0.0;
@@ -26,6 +29,11 @@ public class InputFromUser {
     private Cart cart = new Cart();
     private OrderContext stateContext = new OrderContext();
 
+    /**
+     * Displays welcome screen and product options.
+     * Takes in user input.
+     * @param holder    Represents user
+     */
     public void takeInput(BankAccountHolder holder) {
         MacFactory mac = new MacFactory();
         Scanner scanner = new Scanner(System.in);
@@ -279,6 +287,10 @@ public class InputFromUser {
 
     }
 
+    /**
+     * Retrieves the total cost of products ordered/purchased.
+     * @return  Total price
+     */
     public double getTotalCost() {
         return totalCost;
     }

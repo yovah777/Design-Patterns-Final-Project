@@ -7,8 +7,7 @@ public abstract class StorageDecorator extends ComputerDecorator {
 
     /**
      * Returns storage description to user, which type of storage is added.
-     * @return
+     * @return  feature description
      */
-
     public abstract String getDescription();
 }

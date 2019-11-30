@@ -10,7 +10,7 @@ public class IphoneFactory {
     /**
      * Creates a specific model of Iphone.
      * @param iphoneModel   matches either Iphone11 or Standard.
-     * @return  Iphone object that implemenents one of these models.
+     * @return  Iphone object that represents one of these models.
      */
     public Iphone makePhone(String iphoneModel) {
         if (iphoneModel.equals(null)){

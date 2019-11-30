@@ -12,7 +12,7 @@ public class I7Processor extends ProcessorDecorator{
 
     /**
      * Every processor object is associated with a MacBookPro.
-     * @param computer This is a MacBook
+     * @param computer This is the MacBook
      *            it will be associated to.
      */
     public I7Processor(Computer computer) {

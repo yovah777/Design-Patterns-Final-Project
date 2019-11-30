@@ -1,14 +1,12 @@
 package Mac.MacDecorator;
-
 import Mac.Computer;
 
 /**
  * Represents a hard shell case for a MacBookPro.
- * Has an aggregate relationship with Mac.
  */
 public class HardShellCase extends CaseDecorator{
     /**
-     * Mac model will price of case added to the order
+     * Macbook model
      */
     private Computer computer;
     /**

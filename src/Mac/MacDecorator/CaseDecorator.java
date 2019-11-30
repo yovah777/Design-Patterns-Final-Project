@@ -1,10 +1,9 @@
 package Mac.MacDecorator;
 
 /**
- * Specialization of Mac
- * It will represent the decorator pattern being used.
- * It will also display a message to the user that a custom case
- * feature has been assembled for them.
+ * Decorator pattern being used.
+ * Will display a message to the user that a custom case
+ * feature has been constructed for them.
  */
 public abstract class CaseDecorator extends ComputerDecorator {
     /**

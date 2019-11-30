@@ -12,7 +12,6 @@ public class Storage512GB extends StorageDecorator{
      * @param computer This is a MacBook
      *            it is associated to.
      */
-
     public Storage512GB(Computer computer){
         this.computer = computer;
     }

@@ -5,8 +5,9 @@ package Mac;
  */
 public class MacBookPro15 extends Mac {
     /**
-     * This is a form of identification as
+     * Constructor used as a form of identification as
      * it is processed through the program.
+     * Assigning name of the product to the description.
      */
     public MacBookPro15(){
         description = "MacBookPro15";
