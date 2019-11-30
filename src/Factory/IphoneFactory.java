@@ -19,12 +19,6 @@ public class IphoneFactory {
             return new Iphone11Pro();
         } else if(iphoneModel.equals("Iphone11Standard")){
             return new Iphone11Standard();
-        } else if(iphoneModel.equals("IphoneXR")){
-//            return new IphoneXR();
-            return new Iphone11Pro();
-        } else if(iphoneModel.equals("Iphone8")){
-//            return new Iphone8();
-            return new Iphone11Pro();
         } else {
             return null;
         }

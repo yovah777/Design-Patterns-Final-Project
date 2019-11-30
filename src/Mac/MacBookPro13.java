@@ -14,7 +14,7 @@ public class MacBookPro13 extends Mac {
     }
 
     @Override
-    public double cost(){
+    public double getCost(){
         return 1299.00;
     }
 

@@ -11,10 +11,10 @@ public class Cart {
 
     /**
      *  Order added to cart
-     * @param a
+     * @param order
      */
-    public void addToCart(OrderCommand a){
-        appleCommand = a;
+    public void addToCart(OrderCommand order){
+        appleCommand = order;
         appleCommand.sendOrder(); //Calling on Order.OrderCommand interface
     }
 }

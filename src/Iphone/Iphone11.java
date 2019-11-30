@@ -3,6 +3,7 @@ package Iphone;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 
 /**
@@ -13,12 +14,14 @@ import java.io.InputStreamReader;
 public abstract class Iphone11 implements Iphone {
     /**
      * Gets the price of Iphone model
+     *
      * @return
      */
     public abstract double cost();
 
     /**
      * Gets description of Iphone model.
+     *
      * @return
      */
     public abstract String getDescription();
@@ -29,12 +32,12 @@ public abstract class Iphone11 implements Iphone {
      * getHardware() is hook that makes this a Template Pattern.
      */
     @Override
-    public void implementIphone(){
+    public void implementIphone() {
         designIphone();
         prepareIOSsoftware();
         getHardware();
 
-        if (customerWantsEngraving()){
+        if (customerWantsEngraving()) {
             addEngraving();
         }
     }
@@ -42,15 +45,15 @@ public abstract class Iphone11 implements Iphone {
     /**
      * Prints out confirmation for customer that Iphone11 is being designed.
      */
-    public void designIphone(){
-        System.out.println("Designing new iPhone..." );
+    public void designIphone() {
+        System.out.println("Designing new iPhone...");
     }
 
     /**
      * Prints out software being implemented into Iphone11
      */
-    public void prepareIOSsoftware(){
-        System.out.println("Adding new IOS into iPhone..." );
+    public void prepareIOSsoftware() {
+        System.out.println("Adding new IOS into iPhone...");
     }
 
     /**
@@ -61,43 +64,48 @@ public abstract class Iphone11 implements Iphone {
     /**
      * Prints out confirmation that engraving request is going through.
      */
-    public void addEngraving(){
-        System.out.println("Adding customized engraving to device..." );
+    public void addEngraving() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type in your engraving :  ");
+        String value = scanner.nextLine();
+        System.out.println("Adding " + value + " customized engraving to device...");
     }
 
 
     /**
      * Returns true if engraving feature is used.
      * This is another possible hook method.
+     *
      * @return
      */
-    public boolean customerWantsEngraving(){
+    public boolean customerWantsEngraving() {
         String engravingName = getEngravingName();
 
-        if(engravingName.toLowerCase().startsWith("y")) {
+        if (engravingName.toLowerCase().startsWith("y")) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     /**
      * Asks customer if they would like to add an engraving.
-     * @return  Customer's answer (yes or no)
+     *
+     * @return Customer's answer (yes or no)
      */
-    private String getEngravingName(){
+    private String getEngravingName() {
         String customerResponse = null;
         System.out.println("Would you like to add an engraving name to your Apple device? y/n");
 
         BufferedReader engravingName = new BufferedReader(new InputStreamReader(System.in));
 
-        try{
+        try {
             customerResponse = engravingName.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        if(customerResponse == null){
+        if (customerResponse == null) {
             customerResponse = "no";
         }
         return customerResponse;

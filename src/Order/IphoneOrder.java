@@ -22,7 +22,10 @@ public class IphoneOrder implements OrderCommand {
 
     @Override
     public void sendOrder(){
-        assembler.iPhoneModel = order;
-        assembler.sendOrder("Iphone");
+        assembler.sendOrder("Iphone", order);
+    }
+
+    public double getIphoneCost() {
+        return assembler.getIphoneCost();
     }
 }

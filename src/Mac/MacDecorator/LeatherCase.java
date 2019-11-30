@@ -1,27 +1,27 @@
 package Mac.MacDecorator;
-import Mac.Mac;
+import Mac.Computer;
 /**
  * Represents a leather case for a MacBookPro.
  * Has an aggregate relationship with Mac.
  */
 public class LeatherCase extends CaseDecorator{
 
-    Mac mac;
+    private Computer computer;
     /**
      * Leather case has been added to a MacBookPro.
-     * @param mac Specific Mac object.
+     * @param computer Specific Mac object.
      */
-    public LeatherCase(Mac mac) {
-        this.mac = mac;
+    public LeatherCase(Computer computer) {
+        this.computer = computer;
     }
 
     @Override
-    public double cost(){
-        return 79.00 + mac.cost();
+    public double getCost(){
+        return 79.00 + computer.getCost();
     }
 
     @Override
     public String getDescription(){
-        return mac.getDescription() + ", Leather Case ";
+        return computer.getDescription() + ", Leather Case ";
     }
 }
