@@ -5,7 +5,7 @@ package Payment;
  */
 public class AppleStrategy implements Strategy {
     /**
-     * 3% bonus cash back
+     * 5% bonus cash back
      */
     private final double percentage = 0.05;
     @Override
