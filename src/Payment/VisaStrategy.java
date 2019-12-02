@@ -7,7 +7,7 @@ public class VisaStrategy implements Strategy {
     /**
      * 4% bonus cash back
      */
-    private final double percentage = 0.040;
+    private final double percentage = 0.035;
     @Override
     public double cashBackBonus(double amount) {
         return amount * percentage;

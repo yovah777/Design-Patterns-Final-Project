@@ -23,7 +23,7 @@ public class PaymentContext {
      * @return              Dollar amount of the bonus.
      */
     public double executeStrategy(double amount) {
-        System.out.println("Executive");
+//        System.out.println("Executive");
         return strategy.cashBackBonus(amount);
     }
 

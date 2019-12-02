@@ -23,7 +23,7 @@ public class Iphone11Pro extends Iphone11 {
      */
     public void getHardware(){
         System.out.println("Adding Textured matte glass and stainless steel ...");
-        System.out.println("Adding 3 camera to phone..." );
+        System.out.println("Adding 3 cameras to phone..." );
         System.out.println("Adding Super Retina XDR display...");
     }
 
