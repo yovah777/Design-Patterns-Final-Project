@@ -25,19 +25,4 @@ public abstract class Mac extends Computer {
         return description;
     }
 
-    /**
-     * Informs customer product is being packaged.
-     * @param type
-     */
-    public void packagingMacBookOrder(String type){
-        System.out.println("Packaging" + type + " order");
-    }
-
-    /**
-     * Informs customer product is being shipped.
-     * @param type
-     */
-    public void shipMacBookOrder(String type){
-        System.out.println("Shipping" + type + " order");
-    }
 }

@@ -17,7 +17,6 @@ public class BankAccountHolder {
     private PaymentContext context = null;
     DecimalFormat df = new DecimalFormat("#,###,##0.00");
 
-    ArrayList<Account> accounts = new ArrayList<>();
 
     /***
      * Constructor for BankAccountHolder
