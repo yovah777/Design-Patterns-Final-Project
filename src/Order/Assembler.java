@@ -27,7 +27,7 @@ public class Assembler {
     public void sendOrder(String factoryType, String iPhoneModel) {
         String order = iPhoneModel;
         if (factoryType.equalsIgnoreCase("iphone")) {
-            System.out.println(order + "order received.");
+            System.out.println(order + " order received.");
 
             IphoneFactory factory = new IphoneFactory();
             iphone = factory.makePhone(order);

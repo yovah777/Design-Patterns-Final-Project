@@ -1,13 +1,16 @@
 package Payment.Bank_Account;
+import java.text.DecimalFormat;
 
 /**
  * Represents the CreditAccount(credit cards)
  */
+
 public class CreditAccount extends Account {
 
     // Initialize of variables
     private double limit;
     private Account nextAccount;
+    DecimalFormat df = new DecimalFormat("#,###,##0.00");
 
     /***
      * CreditAccount Constructor
@@ -34,6 +37,14 @@ public class CreditAccount extends Account {
     @Override
     public Account getNextAccount() {
         return nextAccount;
+    }
+
+    /***
+     * Getter method for CreditAccount
+     * @return
+     */
+    public double getLimit(){
+        return limit;
     }
 
     @Override
@@ -69,7 +80,7 @@ public class CreditAccount extends Account {
         if (amount <= limit - balance) {
             balance = balance + amount;
             this.setBalance(balance);
-            System.out.println("You have sufficient credit funds in your accounts : " + balance);
+            System.out.println("You have sufficient credit funds in your accounts : $" + df.format(balance));
         } else {
             double remainder = amount - (limit - balance);
             if (nextAccount != null) {

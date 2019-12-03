@@ -45,10 +45,10 @@ public class InputFromUser {
                 stateContext.printState();
             }
 
-            System.out.println("Welcome to the Apple Store would you like to order?");
+            System.out.println("Welcome to the Apple Store what would you like to order?");
             System.out.println("[1] Iphone");
             System.out.println("[2] Macbook");
-            System.out.println("[3] No thanks, I am not interested in Apple products.");
+            System.out.println("[3] No thanks, I am no longer interested in purchasing an Apple product.");
 
             int answer = scanner.nextInt();
 
@@ -229,7 +229,7 @@ public class InputFromUser {
                 double money = totalCost;
                 System.out.println("Total final cost: $" + totalCost);
                 Scanner scanPayment = new Scanner(System.in);
-                System.out.println("[1] For debit !");
+                System.out.println("[1] For Debit !");
                 System.out.println("[2] For Credit !");
 
                 int value = scanPayment.nextInt();
@@ -242,12 +242,13 @@ public class InputFromUser {
                         stateContext.setState(new DeliveryState());
                         stateContext.printState();
                     }
+                    System.out.println("");
                     holder.printAllBalanceInBankingAccount();
                 } else if (value == 2) {
 
-                    System.out.println("[1] AmericanExpress");
-                    System.out.println("[2] AppleCard");
-                    System.out.println("[3] Visa");
+                    System.out.println("[1] AmericanExpress - 2.5% Cashback");
+                    System.out.println("[2] AppleCard - 5% Cashback");
+                    System.out.println("[3] Visa - 3.5% Cashback");
 
                     Scanner scanPaymentCredit = new Scanner(System.in);
                     int value1 = scanPaymentCredit.nextInt();
@@ -263,8 +264,8 @@ public class InputFromUser {
                     double totalDiscount = context.executeStrategy(money);
                     money -= totalDiscount;
 
-                    System.out.println("After cash back : " + money);
-                    System.out.println("Cash Back save : " + totalDiscount);
+                    System.out.println("Total Cost after Cashback : $" + money);
+                    System.out.println("Dollars saved from Cashback: $" + totalDiscount);
 
                     if (holder.payWithCreditAccount(money) == false) {
                         stateContext.setState(new CancelState());
@@ -273,6 +274,7 @@ public class InputFromUser {
                         stateContext.setState(new DeliveryState());
                         stateContext.printState();
                     }
+                    System.out.println();
                     holder.printAllBalanceInCreditAccount();
 
                 } else {

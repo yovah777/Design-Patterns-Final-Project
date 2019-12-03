@@ -5,7 +5,7 @@ package OrderState;
 public class CancelState implements OrderState {
     @Override
     public void printState(OrderContext orderContext) {
-        System.out.println("Canceling state");
+        System.out.println("----- Canceling State -----");
         orderContext.setState(this);
     }
 }

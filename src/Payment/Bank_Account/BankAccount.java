@@ -1,4 +1,5 @@
 package Payment.Bank_Account;
+import java.text.DecimalFormat;
 /**
  * Bank account class that extends the Account class.
  * @author Nexlore
@@ -7,6 +8,7 @@ public class BankAccount extends Account {
 
     // Intialize variables
     private static int number = 0;
+    DecimalFormat df = new DecimalFormat("#,###,##0.00");
 
     /***
      * Constructor for class BankAccount
@@ -36,7 +38,7 @@ public class BankAccount extends Account {
         if (amount <= balance) {
             double remain = balance - amount;
             this.setBalance(remain);
-            System.out.println("You have sufficient funds in your accounts Balance: " + this.getBalance());
+            System.out.println("You have sufficient funds in your accounts Balance: " + df.format(this.getBalance()));
         } else {
             double remainder = amount - balance;
 
