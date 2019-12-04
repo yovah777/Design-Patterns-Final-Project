@@ -1,5 +1,9 @@
 package Payment.Bank_Account;
 
+/**
+ * Represents the Check Processor that checks accounts and price of purchase(s).
+ *
+ */
 public class CheckProcessor {
     /***
      * Handler that takes in BankAccount, checks to if total Accounts is sufficient to Amount due to customers

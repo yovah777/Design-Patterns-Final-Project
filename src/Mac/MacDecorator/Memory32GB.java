@@ -1,30 +1,31 @@
 package Mac.MacDecorator;
-import Mac.Mac;
+import Mac.Computer;
 
 /**
- * Represents 32GB of Memory object that can be added to
+ * Represents 32GB of Memory feature that can be added to
  * a MacBookPro.
+ * Price will be added to the total.
  */
 public class Memory32GB extends MemoryDecorator{
 
-    Mac mac;
+    private Computer computer;
 
     /**
-     * Every memory object is associated with a MacBookPro.
-     * @param mac This is a MacBook
-     *            it is associated to.
+     * Memory feature is associated with a MacBookPro.
+     * @param computer This is a MacBook
+     *            it will be associated to.
      */
-    public Memory32GB(Mac mac) {
-        this.mac = mac;
+    public Memory32GB(Computer computer) {
+        this.computer = computer;
     }
 
     @Override
-    public double cost(){
-        return 400.00 + mac.cost();
+    public double getCost(){
+        return 400.00 + computer.getCost();
     }
 
     @Override
     public String getDescription(){
-        return mac.getDescription() + ", 32GB of Memory";
+        return computer.getDescription() + ", 32GB of Memory";
     }
 }

@@ -1,5 +1,6 @@
 package Mac.MacDecorator;
-import Mac.Mac;
+
+import Mac.Computer;
 
 /**
  * Represents a I7 processor that will be added to a MacBookPro if chosen
@@ -7,24 +8,24 @@ import Mac.Mac;
  */
 public class I7Processor extends ProcessorDecorator{
 
-    Mac mac;
+    private Computer computer;
 
     /**
      * Every processor object is associated with a MacBookPro.
-     * @param mac This is a MacBook
-     *            it is associated to.
+     * @param computer This is the MacBook
+     *            it will be associated to.
      */
-    public I7Processor(Mac mac) {
-        this.mac = mac;
-    }
-
-    @Override
-    public double cost(){
-        return 100.00 + mac.cost();
+    public I7Processor(Computer computer) {
+        this.computer = computer;
     }
 
     @Override
     public String getDescription(){
-        return mac.getDescription() + ", I7 processor";
+        return computer.getDescription() + ", I7 processor";
+    }
+
+    @Override
+    public double getCost() {
+        return 100 + computer.getCost();
     }
 }

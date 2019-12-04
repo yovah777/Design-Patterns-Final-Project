@@ -1,14 +1,22 @@
 package Payment.Bank_Account;
+import java.text.DecimalFormat;
+
+import Payment.PaymentContext;
 
 import java.util.ArrayList;
 
+/**
+ * Represents the owner of the Bank account
+ */
 public class BankAccountHolder {
     // Intialize variables
     private BankAccount checking;
     private CreditAccount credit;
     private Account current;
     private Account currentCredit;
-    ArrayList<Account> accounts = new ArrayList<>();
+    private PaymentContext context = null;
+    DecimalFormat df = new DecimalFormat("#,###,##0.00");
+
 
     /***
      * Constructor for BankAccountHolder
@@ -16,7 +24,6 @@ public class BankAccountHolder {
      * @param initialMoney - Set amount for initial checking account that is created
      *                     when customer initialized
      */
-
     public BankAccountHolder(double initialMoney) {
         checking = new BankAccount(initialMoney);
         current = checking;
@@ -30,7 +37,6 @@ public class BankAccountHolder {
     public void addAccount(Account account) {
         if (account instanceof CreditAccount) {
             if (currentCredit == null) {
-                System.out.println("Inside");
                 credit = (CreditAccount) account;
                 currentCredit = credit;
             } else {
@@ -68,7 +74,7 @@ public class BankAccountHolder {
         if (credit == null) {
             System.out.println("Dont have credit account !!");
         } else {
-            System.out.println("Testing credit !!");
+//            System.out.println("Testing credit !!");
             CheckProcessor checkingProcessor = new CheckProcessor();
             sufficient = checkingProcessor.processCheck(credit, amount);
         }
@@ -93,10 +99,14 @@ public class BankAccountHolder {
         }
     }
 
+    /**
+     * Prints available balance in credit accounts
+     */
     public void printAllBalanceInCreditAccount() {
+        int i = 1;
         currentCredit = credit;
         while (currentCredit != null) {
-            System.out.println(currentCredit.getBalance());
+            System.out.println("Credit Card #" + i + " Balance:  $" + df.format(currentCredit.getBalance()));
             if (currentCredit instanceof CreditAccount) {
                 if (currentCredit.getNextAccount() instanceof CreditAccount) {
                     currentCredit = currentCredit.getNextAccount();
@@ -104,9 +114,14 @@ public class BankAccountHolder {
                     break;
                 }
             }
+            i++;
         }
     }
 
+    /**
+     *  Represents the total amount of available funds in all Bank Accounts.
+     * @return total amount available
+     */
     public double totalMoney() {
         current = checking;
         double total = 0.0;
@@ -115,6 +130,28 @@ public class BankAccountHolder {
             if (current instanceof BankAccount) {
                 total = total + current.getBalance();
                 if (current.getNextAccount() instanceof BankAccount) {
+                    current = current.getNextAccount();
+                } else {
+                    break;
+                }
+            }
+        }
+
+        return total;
+    }
+
+    /**
+     *  Represents the total amount of available funds in all Credit Accounts.
+     * @return total amount available
+     */
+    public double totalMoneyCredit() {
+        current = credit;
+        double total = 0.0;
+
+        while (current != null) {
+            if (current instanceof CreditAccount) {
+                total = total + ((CreditAccount) current).getLimit();
+                if (current.getNextAccount() instanceof CreditAccount) {
                     current = current.getNextAccount();
                 } else {
                     break;

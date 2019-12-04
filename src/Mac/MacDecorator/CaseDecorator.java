@@ -1,13 +1,11 @@
 package Mac.MacDecorator;
-import Mac.Mac;
 
 /**
- * Specialization of Mac
- * It will help represent the decorator pattern being used.
- * It will display a message to the user that a customized
- * feature is being assembled for them.
+ * Decorator pattern being used.
+ * Will display a message to the user that a custom case
+ * feature has been constructed for them.
  */
-public abstract class CaseDecorator extends Mac {
+public abstract class CaseDecorator extends ComputerDecorator {
     /**
      * Gets the description of what feature is being added.
      * @return

@@ -1,7 +1,7 @@
 package Iphone;
 
 /**
- * Represents an Iphone11Standard.
+ * Represents an Iphone11Standard model.
  * It is a specialization of Iphone11.
  */
 public class Iphone11Standard extends Iphone11 {

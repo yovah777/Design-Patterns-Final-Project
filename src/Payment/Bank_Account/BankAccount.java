@@ -1,5 +1,5 @@
 package Payment.Bank_Account;
-
+import java.text.DecimalFormat;
 /**
  * Bank account class that extends the Account class.
  * @author Nexlore
@@ -8,6 +8,7 @@ public class BankAccount extends Account {
 
     // Intialize variables
     private static int number = 0;
+    DecimalFormat df = new DecimalFormat("#,###,##0.00");
 
     /***
      * Constructor for class BankAccount
@@ -18,7 +19,7 @@ public class BankAccount extends Account {
     }
 
     /***
-     * Customer can increase balance
+     * Increases balance
      * @param moneyToAdd - the amount to increase the balance by
      */
     public void makeDeposit(double moneyToAdd) {
@@ -32,13 +33,12 @@ public class BankAccount extends Account {
      * @return
      * @throws InsufficientFundsException - Exception thrown when Accounts balance is insufficient
      */
-
     public void deduct(double amount) throws InsufficientFundsException {
         Double balance = this.getBalance();
         if (amount <= balance) {
             double remain = balance - amount;
             this.setBalance(remain);
-            System.out.println("You have sufficient funds in your accounts Balance: " + this.getBalance());
+            System.out.println("You have sufficient funds in your accounts Balance: " + df.format(this.getBalance()));
         } else {
             double remainder = amount - balance;
 

@@ -9,8 +9,8 @@ import Iphone.*;
 public class IphoneFactory {
     /**
      * Creates a specific model of Iphone.
-     * @param iphoneModel   Specific type.
-     * @return
+     * @param iphoneModel   matches either Iphone11 or Standard.
+     * @return  Iphone object that represents one of these models.
      */
     public Iphone makePhone(String iphoneModel) {
         if (iphoneModel.equals(null)){
@@ -19,12 +19,6 @@ public class IphoneFactory {
             return new Iphone11Pro();
         } else if(iphoneModel.equals("Iphone11Standard")){
             return new Iphone11Standard();
-        } else if(iphoneModel.equals("IphoneXR")){
-//            return new IphoneXR();
-            return new Iphone11Pro();
-        } else if(iphoneModel.equals("Iphone8")){
-//            return new Iphone8();
-            return new Iphone11Pro();
         } else {
             return null;
         }
